@@ -2,6 +2,7 @@ package gamet;
 
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -28,15 +29,15 @@ public class World
 		{
 			characters.clear();
 			projectiles.clear();
-			enemylvl += 3;
+			enemylvl += 1;
 			lvl++;
-			JOptionPane.showMessageDialog(null, ("Level " + lvl + "/" + enemylvl + "enemies"));
+			JOptionPane.showMessageDialog(null, ("Level " + lvl + "/" + enemylvl*2 + "enemies"));
 			characters.add(new Player(playerX, playerY, 20, 20, this));
 			for (int t = 0; t < enemylvl; t++)
 			{
-				characters.add(new Soldier(random.nextInt(1915), random.nextInt(910), 25, 25, this));
-				characters.add(new Dundy(random.nextInt(1915), random.nextInt(910), 30, 30, this));
-				characters.add(new Tank(500,500, 50, 50, this));
+				characters.add(new Soldier(random.nextInt(Toolkit.getDefaultToolkit().getScreenSize().width), random.nextInt(Toolkit.getDefaultToolkit().getScreenSize().height), 25, 25, this));
+				//characters.add(new Dundy(random.nextInt(Toolkit.getDefaultToolkit().getScreenSize().width), random.nextInt(Toolkit.getDefaultToolkit().getScreenSize().height), 30, 30, this));
+				characters.add(new Tank(random.nextInt(Toolkit.getDefaultToolkit().getScreenSize().width),random.nextInt(Toolkit.getDefaultToolkit().getScreenSize().height), 50, 50, this));
 			}
 
 		}

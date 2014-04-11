@@ -38,14 +38,17 @@ public class Draw extends Canvas implements KeyListener
 				g.setColor(Color.ORANGE);
 			} else if (characters.get(i) instanceof Tank)
 			{
-				g.setColor(Color.GRAY);
+				g.setColor(Color.ORANGE);
 			}
 			characters.get(i).paintCharacter(g);
 		}
 
 		for (int t = 0; t < projectiles.size(); t++)
 		{
-			g.setColor(Color.BLACK);
+//			if (projectiles.get(i) instanceof Player) {
+//				g.setColor(Color.CYAN);
+//			}else{
+			g.setColor(Color.black);
 			projectiles.get(t).paint(g);
 		}
 

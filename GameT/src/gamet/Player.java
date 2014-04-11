@@ -22,8 +22,14 @@ public class Player extends Character
 	public void paintCharacter(Graphics g2)
 	{
 		super.paintCharacter(g2);
+		if(health < 150) {
+			g2.fillRect(40, 40, 150, 40);
+			g2.setColor(Color.green);
+		}else{
 		g2.setColor(Color.green);
-		g2.fillRect(40, 850, health, 40);
+		}
+		g2.fillRect(40, 40, health, 40);
+		
 
 	}
 

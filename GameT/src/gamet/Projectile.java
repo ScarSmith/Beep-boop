@@ -31,7 +31,7 @@ public class Projectile
 
 	public void paint(Graphics g)
 	{
-		g.fillRect(x, y, width, heigth);
+		g.drawOval(x, y, width, heigth);
 	}
 
 	public void move()

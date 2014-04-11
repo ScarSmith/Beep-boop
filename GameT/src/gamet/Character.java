@@ -1,9 +1,11 @@
 package gamet;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
@@ -57,17 +59,17 @@ public class Character
 
 	private void PlayerIsOutsideTheWindow()
 	{
-		if (getX() > 1900)
+		if (getX() > Toolkit.getDefaultToolkit().getScreenSize().width)
 		{
-			x = 1880;
+			x = (int) Toolkit.getDefaultToolkit().getScreenSize().width;
 			if (this instanceof Dundy)
 			{
 				angle = random.nextInt(180) + 90;
 			}
 		}
-		if (getY() > 920)
+		if (getY() > (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight())
 		{
-			y = 920;
+			y = (int) Toolkit.getDefaultToolkit().getScreenSize().height;
 			if (this instanceof Dundy)
 			{
 				angle = random.nextInt(180) + 180;
