@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -17,6 +18,7 @@ public class Start implements ActionListener
 	private World world = new World();
 	private Draw paint = new Draw(world);
 	public Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+	Random random = new Random();
 
 	public static void main(String[] args)
 	{
@@ -36,10 +38,21 @@ public class Start implements ActionListener
 		frame.setVisible(true);
 	}
 
-	private void playSound() {
-		AudioClip sound = JApplet
+	public void playSound() {
+		int songSelection = random.nextInt(3);
+		AudioClip W2 = JApplet
 				.newAudioClip(getClass().getResource("Wandering2.wav"));
-		sound.loop();
+		AudioClip W = JApplet
+				.newAudioClip(getClass().getResource("Wandering.wav"));
+		AudioClip Op = JApplet
+				.newAudioClip(getClass().getResource("Opening.wav"));
+	if (songSelection == 1) {
+		W2.loop();
+	}else if (songSelection == 2) {
+		W.loop();
+	}else {
+		Op.loop();
+	}
 	}
 
 	@Override
@@ -55,4 +68,5 @@ public class Start implements ActionListener
 		}
 	}
 
-}
+	}
+//}
